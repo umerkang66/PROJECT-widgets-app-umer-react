@@ -1,0 +1,23 @@
+.list-container {
+  display: flex;
+  list-style: none;
+  padding: 10px 0 10px 0;
+  border-bottom: 2px solid #333;
+  margin-bottom: 10px;
+}
+
+.list-container:not(:last-child) {
+  margin-right: 30px;
+}
+
+.list-item {
+  color: #333;
+  margin-right: 30px;
+  padding: 10px 15px;
+  transition: all 0.2s ease-out;
+  border-radius: 4px;
+}
+
+.list-item:hover {
+  background-color: #eee;
+}
