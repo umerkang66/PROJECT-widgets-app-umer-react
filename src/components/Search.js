@@ -13,6 +13,7 @@ const Search = () => {
   // If we add parameters in array it will execute when those parameters will change
   // If the useEffect has more than one callback in the array, it will execute if anyone of them changes
   // We cannot use async await directly on the callback function but we can define another function and use async await as we want and then call that function after that.
+  // After the term changes the whole useEffect function will called but it will return this arrow function but not call it, it will be called when the second term is changed (the returned function will be called first), then the whole function is called, and it returns this arrow function again, and this process repeats itself again and again
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -109,7 +110,6 @@ const Search = () => {
     );
   });
 
-  const onInputChange = e => setTerm(e.target.value);
   return (
     <div className="ui container">
       <div className="ui segment">
@@ -118,7 +118,7 @@ const Search = () => {
             <label htmlFor="form__input">Search</label>
             <input
               value={term}
-              onChange={onInputChange}
+              onChange={e => setTerm(e.target.value)}
               type="text"
               name="form__input"
               id="form__input"
@@ -126,7 +126,6 @@ const Search = () => {
           </div>
         </form>
       </div>
-
       <div className="ui celled list">{renderedResults}</div>
     </div>
   );
