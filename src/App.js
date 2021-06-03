@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import 'regenerator-runtime/runtime';
-import 'core-js/stable';
+import { Route, Switch } from 'react-router-dom';
 
 import Accordion from './components/Accordion.js';
 import Search from './components/Search.js';
 import Dropdown from './components/Dropdown.js';
 import Translate from './components/Translate.js';
-import Route from './components/Route.js';
 import Header from './components/Header.js';
 
 const options = [
@@ -21,26 +19,28 @@ const App = () => {
   return (
     <div className="app ui container">
       <Header />
-      <Route path="/">
-        <Accordion />
-      </Route>
+      <Switch>
+        <Route exact path="/">
+          <Accordion />
+        </Route>
 
-      <Route path="/list">
-        <Search />
-      </Route>
+        <Route exact path="/list">
+          <Search />
+        </Route>
 
-      <Route path="/translate">
-        <Translate />
-      </Route>
+        <Route exact path="/translate">
+          <Translate />
+        </Route>
 
-      <Route path="/dropdown">
-        <Dropdown
-          options={options}
-          propLabel="Select from the following options"
-          selected={selected}
-          onSelectedChange={setSelected}
-        />
-      </Route>
+        <Route exact path="/dropdown">
+          <Dropdown
+            options={options}
+            propLabel="Select from the following options"
+            selected={selected}
+            onSelectedChange={setSelected}
+          />
+        </Route>
+      </Switch>
     </div>
   );
 };

@@ -27,23 +27,19 @@ const Dropdown = ({ options, selected, onSelectedChange, propLabel }) => {
   }, []);
 
   const renderedOptions = options.map(option => {
-    if (selected.value === option.value) return;
-
+    if (selected.value === option.value) return null;
     return (
       <div
         key={option.value}
         className="item"
-        onClick={e => {
+        onClick={() => {
           onSelectedChange(option);
-          // setColor(option.value);
         }}
       >
         {option.label}
       </div>
     );
   });
-
-  // console.log(ref.current);
 
   return (
     <div ref={ref} className="ui form">

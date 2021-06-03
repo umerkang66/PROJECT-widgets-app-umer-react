@@ -95,6 +95,7 @@ const Search = () => {
       <div key={dataEl.pageid} className="item">
         <div className="right floated content">
           <a
+            rel="noreferrer"
             target="_blank"
             href={`https://en.wikipedia.org?curid=${dataEl.pageid}`}
             className="ui button"

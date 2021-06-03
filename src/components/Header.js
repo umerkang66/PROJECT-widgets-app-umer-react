@@ -1,20 +1,20 @@
 import React from 'react';
-import Link from './Link.js';
+import { Link } from 'react-router-dom';
 import './RouteOptions.css';
 
 const Header = () => {
   return (
     <div className="list-container">
-      <Link href="/" className="list-item">
+      <Link to="/" className="list-item">
         Accordion
       </Link>
-      <Link href="/list" className="list-item">
+      <Link to="/list" className="list-item">
         Search
       </Link>
-      <Link href="/dropdown" className="list-item">
+      <Link to="/dropdown" className="list-item">
         Dropdown
       </Link>
-      <Link href="/translate" className="list-item">
+      <Link to="/translate" className="list-item">
         Translate
       </Link>
     </div>
