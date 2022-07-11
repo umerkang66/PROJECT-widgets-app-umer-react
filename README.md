@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-These are 4 small react apps in one single appilcation.
+# These are 4 small react apps in one single appilcation.
 
 One is Translation app that uses google translate API.
 
